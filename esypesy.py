@@ -16,6 +16,8 @@ for f in files:
 			sample=sheet.cell_value(i, 0).strip()
 			if sample.startswith("PCR-"):
 				sample=sample.replace("PCR-","")
+			elif sample == "":
+				sample="NTC"
 			o.write("{}/r/{}\n".format( col,sample))
 		o.write("/r/")
 		o.close()
